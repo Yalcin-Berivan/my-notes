@@ -1,0 +1,103 @@
+
+LİNUX GENEL BİLGİER:
+
+Linux açık kaynak kodlu bir işletim sistemidir.
+Linux sheel terminal: Kullanıcıların girdiği komutları alır ve işlem yapması için işletim sistemine verir. 
+Komutların sonuçlarını ve çıktısını kendi üzerinde gösterir
+Linux üzerinde terminal açmak için: Ctrl+Alt+T kullanılır. 
+Gnome arayüzlü bir sistemde Alt+F2 yapıp çıkan sayfaya gnome-terminal yazılıp Enter a basılarak terminale ulaşılabilir.
+Gnome nedir:Linux ve unix gibi sistemlerde yazılım kurmak,kaldırmak ve güncellemek için kullanılan bir paket yöneticisi önyüzüdür.
+paket yöneticisi nedir:yazılım paketlerinin ve kütüphanelerinin kurulum, güncelleme, konfigürasyon, kaldırılması işlemlerinin tutarlı ve stabil bir şekilde yürütülmesini sağlayan olan sistemlerdir.
+unix nedir:çok görevli yapıyı destekleyen bilgisayar işletim sistemidir.unix çok eskidir işletim sistemlerinin annesi olduğu söylenir,linux ise unixten türetilmiştir.Ayrıca linux ücretsiz,unix ise ücretlidir.
+
+YAYGIN LİNUX KOMUTLARI:
+
+1)pwd:Hangi dosyanın içinde olduğumuz bilgisini bize verir.
+2)ls:Bulunduğumuz dizindeki dosyaları gösterir.
+3)ls-a:Bulunduğumuz dizindeki gizli dosyalarda dahil tüm dosyaları bize getirir.
+4)cd:Bir dizine gitmek için kullandığımız komuttur.Örneğin home klasöründeyiz fakat dawnloads klasörüne gitmek istiyoruz "cd dawnloads" yazıp gitmek istediğimiz klasöre gidebiliriz
+(büyük-küçük harflere duyarlıdır klasörün tam ismini yazmalıyız.) bulunduğumuz klasörden geri dönmek ya da bir üst klasöre çıkmak için de "cd.." komutu kullanılmalıdır.
+5)mkdir:bir klasör oluşturmak istiyorsak mkdir komutunu kullanmalıyız.Örnek test adında bir klasör oluşturmak istiyorsak "mkdir test" komutunu yazabiliriz,rmdir bir dizini silmek için kullandığımız komuttur 
+fakat rmdir ancak boş bir klasörü silebilir,içi dolu bir klasörü silmek istiyorsak "rm-rf"komutunu kullanmalıyız.
+6)touch:Bir dosya yaratmak istiyorsak touch komutunu kullanmalıyız (bu dosya herhangi bir uzantılı dosya olabilir txt,zip)
+7)man&-help:bir komutun nasıl kullanılacağı hakkında daha fazla bilgi almak için man komutu kullanılır.Örneğin "man touch" touch komutunun manuel sayfalarını gösterir.Bir komutu yazıp arkasına -help eklersek,
+yine manuel çıktısıyla aynı sonuca ulaşırız.
+8)cp komutu:Dosya ve klasör kopyalama işlemleri gerçekleştiriyor.cp [kaynak-dosya-klasor] [hedef-dosya-klasor] şeklinde kullanılanılır. cp test.js test2.js===>burada test.js dosyasını test2.js adıyla kopyaladık.
+9)mv:Dosyaları bir yerden başka bir yere taşımamızı sağlar,mv komutuyla bir dosyanın ismini de değiştirebiliriz.Örneğin kopyaladığımız “copytest.txt” dosyasının ismini “newcopytest.txt” olarak değiştirmek istiyoruz. 
+“mv copytest.txt newcopytest.txt” komutu ile bu işlemi gerçekleştirebiliriz.kullanımı "mv dosyaadı dosyaadı2"
+10)nano&vi:Linux komut satırı içerisinde hali hazırda olan metin düzenleyicilerdir.Nano,renkli anahtar kelimeleri gösteren ve dillerin çoğunu tanıyan iyi bir metin editörüdür. 
+Vi,nano’dan daha basittir.Bu komutla yeni bir dosya oluşturabilir veya bu düzenleyiciyi kullanarak dosyayı değiştirebilirsiniz.
+11)sudo:"superuserdo" kelimesinden gelir.Bu komutu idari bir yapıyla erişim gerekiyorsa kullanabilriz.Örneğin "sudo su" komutunu kullanarak sistemde admin yetkilisiyle iletişime geçebiliriz.
+
+
+GİT:
+
+Projelerimizi saklamamızı sağlayan bir depo/sunucudur.
+Git kaynak kod sistemidir,dağıtık yapıdadır peki dağıtık yapı nedir ? (birden fazla bilgisayar ve/veya sunucunun birbirleri arasında iletişim kurması ve birbirleriyle bir ağ bütünü oluşturmasına denir.)
+repostory:proje dosyalarını uzak bir sunucuda depolar.
+branch:projenin birçok bölümünün derli toplu şekilde tutulmasını sağlar.brach'in en büyük avantajı ana branch(master)'in proje yapısını etkilemeden,proje üstünde uygulamaların yapılmasıdır.(ana branch'i bir ağaç gibi düşünürsek,
+branchlerde bu ağacın dalları,yani ana projenin diğer kollara ayrılan kısımları olur.)
+Master:reponun ana branchidir.Git üzerinde hiç bir işlem yapmazsak değişikler master branchi üzerinden devam eder.
+Commit:proje dosyalarında değişiklik yapıldığında o değişikliğin anlık görüntüsünü alır.
+Checkout:mevcut branchlerin üzerindeki commitlerin üzerinde geçiş yapmamızı sağlar.     ????
+Fork:reponun kopyasının alınmasıdır.(amacı projenin gelişimine katkı sağlamaktır.)
+pull request:fork ile proje üstünde değişiklik ve güncellemeler yapıldıktan sonra projenin sahibinin değerlendirilmesine sunulmasıdır.
+Merge:branch üzerinde yaptığımız değişiklikleri,master branchi üzerinde birleştirme işlemidir.
+
+--Git komutları--
+
+git config:Kullanıcı adı ve mail gibi kavramların belirleneceği komuttur.(git config --global user.email sam@google.com) (git'e kendimizi tanıtıyoruz)
+git init:Proje dizininizde git dizini oluşturur,projede projenin repo adresi,akışı,gibi bilgileri bulundurur.(projenin ilk defa versiyon kontrol sisteminde hayata geçmesi)
+git add:Verilen parametrelere göre o dosyaları dizine ekler,commitlemeye hazır hale gelirler.“Git add dosya.txt” komutu mevcut dizindeki “dosya.txt” dosyasını dizine ekler.
+(git add dosya.txt
+git add .)
+git status:Hangi dosyaların değiştiğini gösterir.
+git push:commitlediğimiz dosyaları uzak pc'ye ya da sunucuya gönder.
+git pull:uzak pc'den mevcut klasörü çek.
+git clone:mevcut projenin kopyasını oluşturur.
+git checkout:bütün branchlere geçiş yapmamızı sağlar.
+git rm:dosya,klasörleri silmek için kullanılıyor.(git rm dosya.txt)
+git remote:"git remote-v" projeye bağlanan uzak sunucuları listeler.mevcut projeyi uzak sunucuya eklemek için de "git remote add" komutunu kullanabiliriz.
+
+--Git'in dosyalarınız içinde bulunduğu 3 durum var:
+
+Modified:Dosya değişmiş hala veritabanına commitlenmemiş.
+Staged:Değiştirilmiş bir dosyayı bir sonraki commit anlık görünümünde işlenecek şekilde işaretlediğinizi gösterir.
+Committed:Dosyanın güvenli bir şekilde veritabanına saklandığını gösterir
+
+--CLİENT-SERVER YAPISI--
+
+Client:isteği aldıktan sonra istemciye gönderen yazılımdır.
+Server:istemcilerden gelen istekleri alan ve işleyen yazılımlardır.
+Load Balancer: Gelen ağ trafiğini bir grup arasında dağıtmaktan sorumludur.
+
+--VİSUAL STUDİO--
+
+Help menüsü:tüm kısayolları görüntülediğimiz yer.("Keyboard Shortcuts Reference")
+vs kod editörü bize klavye kısayollarını kişiselleştirebilmemizi sağlar.( File -> Preferences -> Keyboard Shortcuts )
+CTRL + P:kombinasyonunu kullandığınızda açılan menüden projenizdeki dosyaları açabilirsiniz.
+CTRL + W:Halihazırda açık olan dosyayı kapatmak için CTRL + W kombinasyonunu kullanabilirsiniz.
+CTRL + B:klavye kısayolunu kullanarak kod editörünüz sol tarafında açık olan menü çubuğunu kapatıp açabilirsiniz.
+CTRL + Alt + B:klavye kısayolunu kullanarak kod editörünüz sağ tarafında açık olan menü çubuğunu kapatıp açabilirsiniz.
+CTRL + SHIFT + P:klavye kısayolunu kullanarak ayarlara ulaşabilirsiniz.
+Bir ifadenin tamamını seçmek istediğinizde o ifadenin sonuna gelerek "CTRL + SHIFT + SOL YÖN TUŞU" kombinasyonunu kullanabilirsiniz.
+Bir ifadenin yerini değiştirmek istediğinizde "ALT + YUKARI/AŞAĞI YÖN TUŞU" kombinasyonunu kullanabilirsiniz
+Satırın neresinde olursanız olun bir alt satıra geçmek istediğinizde "CTRL + ENTER"kısayolunu kullanabilirsiniz.
+Dosyanızda yer alan aynı ifadeleri seçmek için "CTRL + D" kısayolunu kullanabilir sonrasında da çoklu imleç özelliğinden yararlanarak aynı ifadeleri tek seferde değiştirebilirsiniz.
+Satırdaki ifadeleri teker teker atlayarak ilerlemek istediğinizde "CTRL + SOL/SAĞ YÖN TUŞU" kısayolunu kullanabilirsiniz.
+
+
+--CRUD İŞLEMLERİ--
+bir yazılımın temel işlevlerini ifade eden bir kısaltmadır. Bu kısaltma, Create (Oluştur), Read (Oku), Update (Güncelle) ve Delete (Sil) işlemlerinin ilk harflerinden oluşur.
+CRUD, veritabanı işlemlerinin, özellikle de ilişkisel veritabanlarındaki tabloların yönetiminde sık sık kullanılır.
+
+
+--REST NEDİR?--
+apı nedir:İki yazılımın birbiriyle iletişime geçmesine denir.(bir restoranı düşünürsek o restoranda menü ve müşteri arasında iletişmi sağlayan garson bir apı'dir.)
+rest apı:İlgili isteğe karşılık gelen verinin JSON / XML gibi dosya formatlarında gönderilmesidir.REST API, REST mimarisinin prensiplerine taşıyan API’lardır. Tüm prensiplerin karşılanması durumunda RESTful API olarak da 
+adlandırılır.
+rest:http ile hafif ve kolay client-server iletişimi sağlar.
+
+
+
+
