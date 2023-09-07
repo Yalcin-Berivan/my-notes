@@ -97,6 +97,7 @@ apı nedir:İki yazılımın birbiriyle iletişime geçmesine denir.(bir restora
 rest apı:İlgili isteğe karşılık gelen verinin JSON / XML gibi dosya formatlarında gönderilmesidir.REST API, REST mimarisinin prensiplerine taşıyan API’lardır. Tüm prensiplerin karşılanması durumunda RESTful API olarak da 
 adlandırılır.
 rest:http ile hafif ve kolay client-server iletişimi sağlar.
+restful nedir araştır ?
 
 
 
