@@ -98,7 +98,7 @@ rest apı:İlgili isteğe karşılık gelen verinin JSON / XML gibi dosya format
 adlandırılır.
 rest:http ile hafif ve kolay client-server iletişimi sağlar.
 restful nedir araştır ?
-test satırı
+
 
 
 
