@@ -85,6 +85,7 @@ Bir ifadenin yerini değiştirmek istediğinizde "ALT + YUKARI/AŞAĞI YÖN TUŞ
 Satırın neresinde olursanız olun bir alt satıra geçmek istediğinizde "CTRL + ENTER"kısayolunu kullanabilirsiniz.
 Dosyanızda yer alan aynı ifadeleri seçmek için "CTRL + D" kısayolunu kullanabilir sonrasında da çoklu imleç özelliğinden yararlanarak aynı ifadeleri tek seferde değiştirebilirsiniz.
 Satırdaki ifadeleri teker teker atlayarak ilerlemek istediğinizde "CTRL + SOL/SAĞ YÖN TUŞU" kısayolunu kullanabilirsiniz.
+code .:Yeni bir vs kod penceresi açmamızı sağlıyor.
 
 
 --CRUD İŞLEMLERİ--
@@ -93,13 +94,72 @@ CRUD, veritabanı işlemlerinin, özellikle de ilişkisel veritabanlarındaki ta
 
 
 --REST NEDİR?--
+
 apı nedir:İki yazılımın birbiriyle iletişime geçmesine denir.(bir restoranı düşünürsek o restoranda menü ve müşteri arasında iletişmi sağlayan garson bir apı'dir.)
 rest apı:İlgili isteğe karşılık gelen verinin JSON / XML gibi dosya formatlarında gönderilmesidir.REST API, REST mimarisinin prensiplerine taşıyan API’lardır. Tüm prensiplerin karşılanması durumunda RESTful API olarak da 
 adlandırılır.
 rest:http ile hafif ve kolay client-server iletişimi sağlar.
 restful nedir araştır ?
 
+--NodeJs Nedir?--
+
+Nodejs chrome v8 JavaScript Engine'i temel alan bir JavaScript çalışma ortamıdır. 
+Bu çalışma ortamı sayesinde bizler Javascript kodlarını kullanmak için tarayıcı kısıtlamalarından kurtulmuş oluruz. En kısa ifadeyle Node.JS tarayıcılara ihtiyaç duymadan 
+heryerde çalışabilir.
 
 
+--Peki nodeJs nasıl çalışır--?
+
+1.Event-Driven:Olay odaklı çalışır,yani aynı anda sadece bir işlem yapabilmesi nedeniyle node.js kendisinden istenilen işleri bir olay döngüsünün içerisinde değerlendirir.
+2.Non-Blocking:Node.js işlem sırasına koyduğu bir olayın tamamlanmasını beklemeden diğer olayı işleme alabilir, bunun sonucu olarak Node.js iş akışını engellemez.
+3.Asynchronous:Asenkron çalışma, kod akışının yukarıdan aşağıya ilerlemediği, işlemlerin birbirini beklemediği çalışma türüdür. Bu sayede işlem sırası olaya göre belirlenebilir.
+
+Node.js çalışma mantığı üzerine sıkça kullanılan bir benzetmeden biz de faydalanalım. Çalışma ortamımızın bir restoran olduğunu düşünelim ve bu restoranımızda tek başına çalışan ve doğal olarak aynı anda tek bir iş yapabilicek single thread 
+bir garson arkadaşımız olsun.Bu garson arkadaşımız bir masadan sipariş aldıktan sonra orada beklemez değil mi? İlgili siparişi mutfak tarafında bildirdikten sonra başka masalara bakabilir non blocking. 
+Başka masadan da sipariş aldıktan sonra bir diğer masayı düzenleyebileceği gibi olay sırasına göre yeni müşterileri de karşılayabilir event-driven
+
+Asenkron:başlama ve sona erme zamanları ayrı olan, aynı zamanda olmayan
+
+Fork: Başka bir geliştiricinin oluşturduğu projeyi kendi hesabınıza kopyalamanıza Fork adı verilir. Başka bir kullanıcının projesini kendi hesabınıza 
+alıp (Fork) üzerinde çalışarak istediğiniz değişiklikleri yapabilirsiniz.
+
+--Express nedir?--
+Express JS NodeJS üzerinde geliştirilmiş web uygulamaları geliştirmeye yarayan hızlı ve minimalist bir web çatısıdır. 
+Tekli veya çoklu sayfa içeren websiteleri veya API uygulamaları geliştirmek için kullanılır. Sunucu uygulamaları geliştirmeyi çok kolaylaştırır. Node JS http modülü üzerine
+kurulmuştur. Middleware (orta katman) kullanım desteğine sahiptir.
+
+Sunucu tabanlı web uygulamaları geliştirirken bir çok işlemi oldukça kolaylaştırır. Mesela sayfa yapısı (routing), arayüz işleme, ara katman uygulamaları, v
+veritabanlarına bağlantı gibi. Günümüzde oldukça popüler bir framework olarak karşımıza çıkar. Bir süre daha bu şekilde gideceğini söylemek bir abartı sayılmaz.
+
+Backend ihtiyacı duyan, finansal siteler, e-ticaret siteleri, bloglar, forum ve benzeri uygulamaları geliştirmek için kullanılabilir. Bir çok veritabanı ile birlikte çalışabilmektedir. Yazma okuma gibi dosya işlemleri için kullanılabilir. MEAN, MERN gibi isimlendirilen geliştirme ortamlarında (MERN – MongoDb, ExpressJS, React JS, Node JS) ki E harfi Express’i temsil eder.
+Günümüzde çok sayıda firmanın tercih ettiği bir frameworktür. Node temelli olduğu için Node modüllerini kullanabilir. Ayrıca Express için geliştirilmiş farklı modüller de
+bulunmaktadır.
+
+Node tabanlıdır. Bu nedenle NodeJS modüllerini kullanabilir.
+Web uygulaması geliştirmek için tasarlanmıştır, bu neden web uygulamalarını geliştirmek daha kolay ve hızlıdır.
+Orta katman ( middleware ) desteğine sahiptir. Tekrarlayan işlerin yönetimini kolaylaştırır.
+Arayüz motoru (template engine) desteği vardır. Yaklaşık 15 adet tepmlate engine desteğine sahiptir. İstediğinizi kullanabilirsiniz. Bunlardan bazılar ejs, teacup, ect, doT, handlebars şeklinde sıralanabilir.
+Sayfa yönlendirmeleri (routing) desteği ile gelir ve bu işlemleri oldukça kolaylaştırır.
+Static (sabit) sayfalar ile çalışmayı oldukça kolaylaştır. Bu nedenle css, resim gibi dosya yönetimi kolaylaşır.
+Bir çok veritabanı uygulamasını destekler. MongoDB, MarianDB, Postgresql bunlardan bazılarıdır.
+API uygulamaları geliştirmeyi kolaylaştır.
+JavaScript ile yazılmıştır bu nedenle JavaScript’in sağladığı kolaylıklardan faydalanır.
 
 
+--Postman nedir?--
+farklı uygulama yazılımlarının birbirleri ile etkileşim sağlamasına olanak sağlar. Postman sayesinde uzun uzun kodlar yazmak yerine API’lerimizi kolayca test edebiliriz. 
+Birçok özelliği sayesinde kolay bir şekilde istek hazırlayıp gelen cevap değerlerini kullanabiliriz
+POST,PUT,GET,DELETE
+GET:Sunucudan sadece veri çekmek(okuma) istiyorsak yani veri üzerinde herhangi bir değişiklik(ekleme, slime, modifiye) yapılmayacaksa GET metodunu kullanmamız tavsiye ediliyor.
+Ör: GET /students kullandığımızda bize öğrenciler listesini dönmesi.
+POST: Server Api’e body kısmını doldurarak ve veri üzerinde değişiklik yapmak istediğimizde kullanabiliriz
+Ör: Post /createUser ile body kısmına kullanıcı bilgileri girip veritabanında bir kullanıcı oluşturulması istenmesi
+PUT: Post isteğinin özelliklerine sahiptir. 
+DELETE: CRUD operasyonlarından Delete’e karşılık gelir. Bir veriyi silmek istediğimizde kullanılması tavsiye ediliyor
+HİSTORY:Postman’nin sol tarafında bulunan History sekmesi önceden kullandığımız istekleri gün gün tutuyor
+COLLECTİON:Collection bize birden fazla isteği grup halinde kaydetmemizi, gerektiğinde başkalarıyla paylaşmamızı sağlıyor. 
+
+JSON: Veri depolamak veya veri iletmek için kullanılan metin tabanlı bir söz dizimi yapısıdır. 
+Genellikle bir sunucu ve istemci arasında veri alışverişi için veya yazılımların genel ayarları için kullanılan bir formattır.
+
+MongoDb:verileri JSON biçiminde doküman olarak veritabanında saklayan NoSQL tabanlı bir veritabanıdır.
