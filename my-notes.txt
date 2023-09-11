@@ -28,6 +28,7 @@ yine manuel çıktısıyla aynı sonuca ulaşırız.
 10)nano&vi:Linux komut satırı içerisinde hali hazırda olan metin düzenleyicilerdir.Nano,renkli anahtar kelimeleri gösteren ve dillerin çoğunu tanıyan iyi bir metin editörüdür. 
 Vi,nano’dan daha basittir.Bu komutla yeni bir dosya oluşturabilir veya bu düzenleyiciyi kullanarak dosyayı değiştirebilirsiniz.
 11)sudo:"superuserdo" kelimesinden gelir.Bu komutu idari bir yapıyla erişim gerekiyorsa kullanabilriz.Örneğin "sudo su" komutunu kullanarak sistemde admin yetkilisiyle iletişime geçebiliriz.
+12)History: terminal kullanarak yazdığımız komutların hafızada tutulması ve isteğimiz zaman buna erişmemizi sağlayan oldukça kullanışlı bir komuttur.
 
 
 GİT:
@@ -58,6 +59,10 @@ git clone:mevcut projenin kopyasını oluşturur.
 git checkout:bütün branchlere geçiş yapmamızı sağlar.
 git rm:dosya,klasörleri silmek için kullanılıyor.(git rm dosya.txt)
 git remote:"git remote-v" projeye bağlanan uzak sunucuları listeler.mevcut projeyi uzak sunucuya eklemek için de "git remote add" komutunu kullanabiliriz.
+git'de 2 farklı branch oluşturabiliriz:
+git branch komutunu kullanmak, diğeri ise git checkout -b "..." parametresi vermek. Git branch komutu sadece yeni bir branch oluştururken, git checkout -b “…” komutu yazdığınız
+isimde branch yoksa onu oluşturur ve bulunduğunuz branch değiştirilir.
+git diff: Git'de iki versiyon arasındaki farkları görmek için git diff komutunu kullanabilirsiniz.(git deneme.txt dersek de sadece deneme dosyasındaki değişiklikleri bize getirir.)
 
 --Git'in dosyalarınız içinde bulunduğu 3 durum var:
 
@@ -86,6 +91,7 @@ Satırın neresinde olursanız olun bir alt satıra geçmek istediğinizde "CTRL
 Dosyanızda yer alan aynı ifadeleri seçmek için "CTRL + D" kısayolunu kullanabilir sonrasında da çoklu imleç özelliğinden yararlanarak aynı ifadeleri tek seferde değiştirebilirsiniz.
 Satırdaki ifadeleri teker teker atlayarak ilerlemek istediğinizde "CTRL + SOL/SAĞ YÖN TUŞU" kısayolunu kullanabilirsiniz.
 code .:Yeni bir vs kod penceresi açmamızı sağlıyor.
+Ctrl+k+f=vs kod klasörünü kapat.
 
 
 --CRUD İŞLEMLERİ--
@@ -163,3 +169,5 @@ JSON: Veri depolamak veya veri iletmek için kullanılan metin tabanlı bir söz
 Genellikle bir sunucu ve istemci arasında veri alışverişi için veya yazılımların genel ayarları için kullanılan bir formattır.
 
 MongoDb:verileri JSON biçiminde doküman olarak veritabanında saklayan NoSQL tabanlı bir veritabanıdır.
+
+Projede yaptığımız bir değişikliği git'e aktarma komutları:GİT ADD + GİT COMMİT -M "..." + GİT PUSH
