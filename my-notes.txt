@@ -130,6 +130,7 @@ Fork: Başka bir geliştiricinin oluşturduğu projeyi kendi hesabınıza kopyal
 alıp (Fork) üzerinde çalışarak istediğiniz değişiklikleri yapabilirsiniz.
 
 --Express nedir?--
+(http modülünü kullanarak bizim uzun uzun yazdığımız nodejs kodlarının önüne geçiyor,yani bizim için kısaltıyor)
 Express JS NodeJS üzerinde geliştirilmiş web uygulamaları geliştirmeye yarayan hızlı ve minimalist bir web çatısıdır. 
 Tekli veya çoklu sayfa içeren websiteleri veya API uygulamaları geliştirmek için kullanılır. Sunucu uygulamaları geliştirmeyi çok kolaylaştırır. Node JS http modülü üzerine
 kurulmuştur. Middleware (orta katman) kullanım desteğine sahiptir.
@@ -137,7 +138,8 @@ kurulmuştur. Middleware (orta katman) kullanım desteğine sahiptir.
 Sunucu tabanlı web uygulamaları geliştirirken bir çok işlemi oldukça kolaylaştırır. Mesela sayfa yapısı (routing), arayüz işleme, ara katman uygulamaları, v
 veritabanlarına bağlantı gibi. Günümüzde oldukça popüler bir framework olarak karşımıza çıkar. Bir süre daha bu şekilde gideceğini söylemek bir abartı sayılmaz.
 
-Backend ihtiyacı duyan, finansal siteler, e-ticaret siteleri, bloglar, forum ve benzeri uygulamaları geliştirmek için kullanılabilir. Bir çok veritabanı ile birlikte çalışabilmektedir. Yazma okuma gibi dosya işlemleri için kullanılabilir. MEAN, MERN gibi isimlendirilen geliştirme ortamlarında (MERN – MongoDb, ExpressJS, React JS, Node JS) ki E harfi Express’i temsil eder.
+Backend ihtiyacı duyan, finansal siteler, e-ticaret siteleri, bloglar, forum ve benzeri uygulamaları geliştirmek için kullanılabilir. Bir çok veritabanı ile birlikte çalışabilmektedir. Yazma okuma gibi dosya işlemleri için kullanılabilir. 
+MEAN, MERN gibi isimlendirilen geliştirme ortamlarında (MERN – MongoDb, ExpressJS, React JS, Node JS) ki E harfi Express’i temsil eder.
 Günümüzde çok sayıda firmanın tercih ettiği bir frameworktür. Node temelli olduğu için Node modüllerini kullanabilir. Ayrıca Express için geliştirilmiş farklı modüller de
 bulunmaktadır.
 
@@ -160,7 +162,7 @@ GET:Sunucudan sadece veri çekmek(okuma) istiyorsak yani veri üzerinde herhangi
 Ör: GET /students kullandığımızda bize öğrenciler listesini dönmesi.
 POST: Server Api’e body kısmını doldurarak ve veri üzerinde değişiklik yapmak istediğimizde kullanabiliriz
 Ör: Post /createUser ile body kısmına kullanıcı bilgileri girip veritabanında bir kullanıcı oluşturulması istenmesi
-PUT: Post isteğinin özelliklerine sahiptir. 
+PUT: Post isteğinin özelliklerine sahiptir.(düzenleme,kullanıcı isminde yapılan değişiklik gibi) 
 DELETE: CRUD operasyonlarından Delete’e karşılık gelir. Bir veriyi silmek istediğimizde kullanılması tavsiye ediliyor
 HİSTORY:Postman’nin sol tarafında bulunan History sekmesi önceden kullandığımız istekleri gün gün tutuyor
 COLLECTİON:Collection bize birden fazla isteği grup halinde kaydetmemizi, gerektiğinde başkalarıyla paylaşmamızı sağlıyor. 
@@ -171,3 +173,24 @@ Genellikle bir sunucu ve istemci arasında veri alışverişi için veya yazıl�
 MongoDb:verileri JSON biçiminde doküman olarak veritabanında saklayan NoSQL tabanlı bir veritabanıdır.
 
 Projede yaptığımız bir değişikliği git'e aktarma komutları:GİT ADD + GİT COMMİT -M "..." + GİT PUSH
+
+Request ve Response:Node.js ile yazılan bir web uygulaması temelde bir request - response (istek - cevap) döngüsüdür. Bizler internet tarayıcımıza www.google.com yazmakla, aslında uzaktaki sunucuya bir request gönderiyoruz.
+Uzaktaki sunucu ise bize gördüğümüz Google sayfasını göstererek bir response dönüyor.
+
+React:Kullanıcı arayüzü oluşturmamızı sağlayan,açık kaynak kodlu bir javascript kütüphanesidir.
+Hızlı ve interaktif kullanıcı arayüzü geliştirmemizi kolaylaştırır.Örneğin Instagram arayüzünde karşımıza çıkan arama kutusu, logo ve mesaj butonu gibi görsellerin oluşturulmasını kolaylaştırır.
+Arayüzdeki tüm işlemleri kolay, maliyetsiz ve yüksek performanslı olarak yapar.
+
+Router:React ile uygulama geliştirildiğinde,uygulama içerisnde farklı sayfalar arasında dolaşmak için kullanabileceğimiz bir yönlendirici kütüphanesidir.bu kütüphane ile uygulama
+içerisinde farklı adreslere sahip sayfalar oluşturmamız oldukça kolaydır.
+
+Vuejs:Kullanıcı arayüzü ve tek sayfalık uygulamalar oluşturmamızı sağlayan açık kaynak kodlu bir javascript kütüphanesidir.
+Nodemon:Sunucuda yapmış olduğumuz değişiklikleri anlık olarak bize gösterir.
+not:Post metodunu kullanırken -->body-->row-->text-->json
+not:body-parser--->body isteklerini json halinde almamızı sağlayan yardımcı bir kütüphanedir.
+
+React'ta export ve export default olarak bilinen 2 komut bulunuyor.export default bir componentin içinde olan bir çok fonksiyondan hangisinin varsayılan olarak çalıştırılıcağını belirtir.
+export ise fonksiyonlarımızı App.js'de kullanabilmemize yarar.
+
+Knexjs:Veritabanı işlemleriyle ilgilenirken kullandığımız kütüphane
+Migration:Veri tabanlarının ilk olarak ayağa kaldırılmasına denir.
