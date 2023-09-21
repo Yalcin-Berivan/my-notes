@@ -55,4 +55,19 @@ olumlu durumlarda ise resolve than ile çalışmaktadır
  4-Dosyayı silmek:fs.unlink ==>fs.unlink("path",callback);
  5-Klasör oluşturmak:fs.mkdir ==>fs.mkdir("uploads/img",{recursive:true},callback); [uploads klasörü oluşturup içine img adında farklı bir klasör oluşturdu.]
  6-Klasör silmek:fs.rmdir ==>fs.rmdir("uploads/img",{recursive:true},callback);     [uploads/img,path kısmına bunu yazarsak sadece img dosyasını sileriz tamamını silmek istiyorsak ilk klasörü (uploads) yazmak yeterli olacaktır]
+
 *recursive:Fonksiyonun girilen parametre değeri kadar kendisini tekrar etmesine recursive, rekürsif, özyineleme veya yinelenen fonksiyonlar denir. 
+*dependencies:Benim kodumun çalışması için bağlı olduğu diğer kodlar.
+*moment:tarihe ait olan dosyaları daha kolay yazmamızı sağlıyor.
+*Yüklediğimiz bir paketi uninstal etmek istiyorsak ==> npm uninstal paket adı 
+*Bir paketi indirmek istiyorsak ==> npm i paket adı
+*Modül:Nodejs içerdiği tüm javascript dosyalarına bir modül olarak davranır,modül genelde belirli özel bir işlevi olan js dosyalarıdır.
+*Map:Uygulandığı dizinin tüm elemanlarını tek tek gezer ve verilen fonksiyon üzerinde o elemanı kullanarak işlem yapar.
+*Promise:Gelecekte olabilecek bir işlemin yerini tutabilecek bir javascript kütüphanesidir.
+*data:boolean bir ifadedir(true-false)
+*bir fonksiyonun başına async konulursa o fonksşyon promise döner.
+*async-await yapısı:kısaca asenkron bir fonskiyonu senkronmuş gibi çalıştırmak.(istek atıldıktan sonra diğer isteklerin yapılması gibi çünkü atılan isteğin uzun sürme olasılığı vardır,
+isteği atmadan diğer işlemlere geçmesini istemediğimiz için async-await yapısını kullanıyoruz,mevcut fonskiyonumuzu async keywordüyle kullanmalıyız.)
+*Nodejs:Single-thread yapısına sahiptir(bloklamayan) yani bir işi yaptıktan sonra,o işin bitmesini beklemeden farklı işlere de bakma.
+
+npm init ==> npm --version ==> npm init -y (y flagı yardımıyla tüm soruları varsayılan olarak kabul ederiz) ==> npm i express ==> npm i moment 
