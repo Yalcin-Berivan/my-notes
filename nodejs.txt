@@ -1,0 +1,58 @@
+**** NODEJS NEDİR ? ***
+Chrome V8 JavaScript Engine'i temel alan bir JavaScript çalışma ortamıdır.Bu çalışma ortamı sayesinde bizler JavaScript kodlarını kullanmak için tarayıcı kısıtlamalarından kurtulmuş
+oluruz.
+--Nodejs nasıl çalışır ?--
+1-Event-driven:Olay odaklıdır,yani aynı anda sadece tek bir işlem yapabilmektedir.
+2-Non-blocking:Nodejs işlem sırasına koyduğu bir olayın tamamlanmsını beklemeden diğer bir olayı işleme alabilir.dolayısıyla nodejs iş akışını engellemez.
+3-Asynchronous:asenkron çalışma işlemlerin birbirini beklemediği çalışma türüdür.Bu sayede işlem sırası olaya göre belirlenir.
+
+***REPL ortamı***
+Nasıl ki windows işletim sistemimizdeki terminal ekranı "komut sistemi (cmd)" ise nodejs javascript çalışma ortamnın da bir terminal(sheel-komut satırı) ekranı vardır.Ve node 
+repl olarak adlandırılır. REPL, Read - Eval - Print - Loop kelimelerinin baş harflerinden oluşmaktadır ve bizlere Node.js Javascript çalışma ortamında Javascript kodlarını çalıştırabileceğimiz 
+bir komut satırı ortamı sunar.repl ortamını oluşturmak için terminal ekranına node yazmamız yeterli olacaktır.fonksiyon,class oluşturmak,classlardan nesneler türetmek gibi tüm javascript 
+işlemlerini yapabiliriz.
+
+--REPL çalışma ortamı--
+help - Tüm komutları listeler.
+break - Çok satırlı ifadeden çıkar.
+ctrl + c - Çalışan komutu durdurur.
+ctrl + d - REPL ortamını sonlandırır.
+save dosya_adi - REPL ortamındaki kodları dosyaya kaydeder.
+load dosya_adi - Dosyadaki kodları REPL ortamına alır.
+
+***Nodejs senkron ve asenkron çalışma mantığı***
+-Senkron:İşlemlerin sırayla yapılmasıdır,beklemekten sıkılmaz başka işlerin aciliyetiyle ilgilenmez,(bir işlem yapılırken diğer işlem bloklanır.)
+-Asenkron:İşlemlerin sırasıyla devam etme zorunluluğu yoktur,bir işlemi beklemeden başka bir işleme devam edebilir,(bir işlem yapılırken diğer işlem bloklanmaz.)
+ 
+--Callback Fonksiyonu--
+Node.js'in asenkron yapısı üzerine konuştuğumuzda belirttiğimiz 2 temel konu vardı. Node.js uzun süren işlemlerin tamamlanmasını beklemeden diğer işlere devam etmek ister.
+Bunun haricinde ise uzun süren işlemler tamamlandığında, bu uzun süren işlemlere bağımlı olan diğer işlemlere devam etmek ister. Buradaki sorumuz ise şu: Bu devam işlemler, uzun süren işlemin tamamlandığını nasıl bilecek? 
+İşte burada callback devreye girer.
+callback fonskiyonu,başka bir fonskiyon içerisinde argüman olarak kullanılabilen fonksiyon anlamına gelmektedir.
+
+/// Bir fonksiyon tamamlandığında, ilgili geri dönüş için callback fonksiyon bize güzel bir çözüm sunuyor. Ancak bizim amaçlarımızdan birisi neydi? 
+Birbirleriyle ilişkili işlemlerin birbirine bağlı olarak çalışması, şimdi callback fonksiyon ile biz sonuçları beklemek durumunda kalıyoruz. Şöyle bir yapımız olsaydı biz işlem sonuçlarını beklerken bir promise verelim. 
+İstediğimiz sonucu aldığımızda devam edelim, bir hata ile karşılaştığımızda başka bir işlem yapalım. İşte burada Promise yapısı devreye girer. ///
+
+
+--Promise Nedir?--
+Promise bir işlemin sonucunu temsil eden bir javascript nesnesidir.Promise nesnesi resolve reject adında 2 parametre alır.(olumlu durumlarda resolve olumsuz durumlarda ise reject
+ile yapılan işlemlere dair güvence verir.) Promise yapısı olumlu sonuçları .then (value) olumsuz sonuçları ise .catch (err) ile karşılar,olumsuz durumlarda reject catch ile yakalanır,
+olumlu durumlarda ise resolve than ile çalışmaktadır 
+
+
+--Async-await yapısı--
+ Bir fonksiyon async anahtar kelimesi ile birlikte tanımlanırsa, fonksiyonun olumlu sonuçlanması sonucunda bir Promise döner. 
+ Bir async fonksiyon await anahtar kelimesi ile birlikte kullanılırsa ilgili Promise olumlu bir şekilde dönene kadar async fonksiyonunun çalışması bekletilir.
+
+ FİLE SYSTEM MODÜLE (FS MODÜLÜ):
+ *fs modülü dosya ve klasör işlemleri yaparken kullanılan çekirdek bir modüldür.Nodejs'nin yazılımıyla birlikte gelmiştir,tekrar oluşturulmasına gerek yoktur ve kullanıma hazırdır.
+ const fs=require('fs')
+ Modülün barındırdığı fonskiyonlara incelediğimizde aynı fonksiyonun senkron ve asenkron versiyonları vardır. fs.readFile asenkron, fs.readFileSync senkron çalışan bir fonksiyondur.
+ 1-Dosya okumak:fs.readFile ==>fs.readFile('path', 'utf8', callback); 
+ 2-Dosya oluşturmak:fs.writeFile ==>fs.writeFile('message.txt(path)', 'Hello Node.js', 'utf8', callback); 
+ 3-Dosyaya veri eklemek:fs.appendFile ==>fs.appendFile('message.txt', 'data to append', 'utf8', callback); 
+ 4-Dosyayı silmek:fs.unlink ==>fs.unlink("path",callback);
+ 5-Klasör oluşturmak:fs.mkdir ==>fs.mkdir("uploads/img",{recursive:true},callback); [uploads klasörü oluşturup içine img adında farklı bir klasör oluşturdu.]
+ 6-Klasör silmek:fs.rmdir ==>fs.rmdir("uploads/img",{recursive:true},callback);     [uploads/img,path kısmına bunu yazarsak sadece img dosyasını sileriz tamamını silmek istiyorsak ilk klasörü (uploads) yazmak yeterli olacaktır]
+*recursive:Fonksiyonun girilen parametre değeri kadar kendisini tekrar etmesine recursive, rekürsif, özyineleme veya yinelenen fonksiyonlar denir. 

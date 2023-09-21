@@ -1,0 +1,56 @@
+VERİTABANI (DATABASES) NEDİR?
+
+*Veritabanı,verilerimizi sakladığımız ve veriler üzerinde değişiklikler yapabileceğimiz bir ortamdır.Birçok Veritabanı oluşumu vardır fakat en bilinen iki tanesi
+SQL VE NOSQL dir.
+SQL:İlişkisel(relational)veritabanları olarak bilinir,tüm veriler tablolarda saklanır mevcut işlemleri de primary key ve foreign key kavramlarıyla oluştururuz.
+sql tablolar arasında ilişkiler vardır.Örnek:(ürün-müşteri-sipariş) bilgilerini tutan bir veritabanı olsun,hangi müşteri hangi üründen sipariş etti,ürün stoğu vs. gibi ilişkisel verileri
+içinde barındıran bir sistemdir.
+NOSQL:MondoDB bir nosql veritabanıdır.Nosql,verilerimizi sql gibi excel tablolarında tutmaz collectionlar vardır,yani mongodb döküman tabanlıdır,verilerimiz field(alan) ve
+değer adı verilen ikililerinde tutulur.Ayrıca MondoDB hem flexibel hemde distributed yapıya sahiptir.
+Flexibel:Esnek bir yapıya sahip olması
+Distributed:Verilerimizi artırdıkça veritabanlarımızın alanını da kolayca artırabiliyoruz.
+MondoDB Compass:Popüler bir mongodb grafik arayüzüdür.
+
+
+*mongodb çalışma ortamının oluşturulması:
+cmd komut satırına mongo yazdıktan sonra "'mongo' is not recognized as an internal or external command,operable program or batch file." yazısı alıyorsak mongoyu ilk olarak ortam değişkeni
+olarak tanımlamamız gerekecektir.Bunun için "Enviroments variables" kısmında mongoyu ortam (çevre) değişkeni olarak tanımlamamız yeterli olacaktır.
+
+MONGODB KOMUTLARI:
+
+1-show dbs (databases):Sistemimizde bulunan veritabanlarını listelemek için kullanılır.
+2-use myDbs:Komutunu kullanarak olmayan bir veritabanı oluşturup içine veri ekledikten sonra veritabanımızın oluştuğunu göreceğiz.Bu komutu yazdıktan sonra komut satırımıza 
+"switched to db myDbs" mesajını alacağız.Ayrıca sistemde var olan bir veritabanını kullanmak istediğimizde de aynı komutu (use) kullanmak mümkün.Önce use daha sonra var olan 
+veritabanının ismi.
+3-db.dropDatabase():Sistemimizde var olan bir veritabanını silmek istediğimizde ise önce silmek istediğimiz veritabanına use ile geçiş yapıyoruz daha sonra db.dropDatabase()
+komutunu kullanarak veritabanımızı siliyoruz.
+4-db.createCollection(“İsim”):Collectionlar yani tablolar oluşturmak istediğimizde bu kumut kullanılır.Önce use ile ilgili veritabanının içine girdikten sonra db.createCollection("")
+komutunu kullanarak collectionlar oluşturuyoruz.
+5-show collections:Veritabanımızda bulunan collectionları listelemek için kullanılır.
+6-db.musteriler.drop():Veritabanımızda var olan bir collectionu silmek istediğimizde bu komut kullanılır.
+7-db.musteriler.insert({“name”: “Berke”, “surname”: “Kurnaz”, “age”:20})collectionlara veri eklemek istediğimizde "insert" komutunu kullanıyoruz.
+8-db.musteriler.find():Collection içerisindeki verileri listelemek için kullanılır.
+9-db.musteriler.find().pretty():Collection içerisindeki verileri listelemek için kullanılır.(Fakat daha düzenli listeler)
+10- db.Collectionİsmi.update():Collectionlar içerisindeki verileri güncellemek için kullanılır.Burada update içerisine önce hangi kaydı güncellemek istediğimizi söylüyoruz. Bu genellikle her kayda otomatik olarak verilen _id değeri olur.
+ardından ise hangi alanını değiştirmek istediğimizi söylüyoruz.
+Örnek:Müşteriler collectionları içerisindeki Berke'nin ismini mehmet olarak değiştirelim;
+db.musteriler.uptade({“_id”: ObjectId(“5cdbe3de5bf1023ab8014c2f”)},{$set: {“name”: “Mehmet”}})
+db.Collectionİsmi.remove():Collectionlar içerisindeki veriyi silmek istediğimizde remove komutunu kullanırız.Yine güncelleme işleminde olduğu gibi silmek istediğimiz kaydın değerini remove içerisine json formatında giriyoruz.
+Ve bu değer genellikle kaydın _id kısmı oluyor.Örnek:collectionlar içerisindeki ayşe'yi silmek istiyorum yazacağım komut:
+db.ayse.remove({"id":ObjectId(“5cdbe47a5bf1023ab8014c31”)})
+
+*Photos collection ve bu collection içerisindeki ilk dökümanımızı oluşturmak için:db.photos.insertOne(
+  {title: "Photo 1", description: "Photo description lorem ipsum", qty:20}
+)
+*Oluşturduğumuz dökümanı görebilmek için:db.photos.find()
+*Döküman ile beraber collectionda oluşacağını belirtmiştik, collectionları görmek için:show collections
+*Birden daha fazla dökümanı oluşturmak için:db.photos.insertMany([
+  {title: "Photo 2", description: "Photo 2 description", qty:50},
+  {title: "Photo 3", description: "Photo 3 description", qty:150}
+])
+Belirli özelliklere sahip dökümanları sıralamak için 2 örnek:db.photos.find({title: "Photo 1"})
+db.photos.find({title: "Photo 1", qty:200})
+*Bir Dökümanı silmek için de yine öncelikle hangi gökümanı silmek istediğimizi yakalamamız gerekiyor. Aşağıdaki örneğimizde qty:50 olan dökümanı siliyoruz. Eğer birden daha fazla döküman varsa ilki silinir.
+Birden fazla döküman silmek için, deleteMany() kullanılır.(db.photos.deleteOne({qty: 50}))
+*Dökümanı güncellemek için, öncelikle hangi dökümanı güncelleyeceğimizi belirtmemiz gerekir. Aşağıdaki örneğimizde {title: "Photo 1"} ile hangi dökümanı güncelemek istediğimizi belirtiyoruz,
+$set ile de yapacağımız değişikliği belirtiyoruz:
